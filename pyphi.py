@@ -313,7 +313,7 @@ def pca_(X,A,*,mcs=True,md_algorithm='nipals',force_nipals=False,shush=False):
              [U,S,Th]   = np.linalg.svd(X_ @ X_.T)
              T          = Th.T 
              T          = T[:,0:A]
-             P          = X.T @ T
+             P          = X_.T @ T
              for a in list(range(A)):
                  P[:,a] = P[:,a]/np.linalg.norm(P[:,a])
              T          = X_ @ P
